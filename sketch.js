@@ -74,9 +74,24 @@ function draw() {
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
 
+  if(keyDown(LEFT_ARROW)){
+	  helicopterSprite.x=helicopterSprite.x-20
+	  console.log("working")
+  }
+
+  if(keyDown(RIGHT_ARROW)){
+	helicopterSprite.x=helicopterSprite.x+20
+	console.log("working")
+  }
+
+	if(keyDown(DOWN_ARROW)){
+		Matter.Body.setStatic(packageBody,false);
+
   
+  Matter.Body.translate(packageBody,{x:-20,y:0})
+	}
   drawSprites();
   
   
  
-}
+  }
